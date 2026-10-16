@@ -26,9 +26,7 @@ This project walks the whole analyst workflow:
 
 ## 3. Dataset
 
-**Online Retail II** (UCI): ~1M invoice lines from a UK online retailer, 2009-2011, with customer IDs and countries. It suits RFM, cohorts and CLV because customers buy repeatedly. (Avoid Olist for this project; most customers purchase once.)
-
-**Churn definition (be explicit; this is a key design decision):** a customer is *churned* if they make **no purchase in the 90 days after the observation date**. Build features only from data **before** the observation date to prevent leakage.
+**Online Retail II** (UCI): ~1M invoice lines from a UK online retailer, 2009-2011, with customer IDs and countries. It suits RFM, cohorts and CLV because customers buy repeatedly. 
 
 ## 4. Methodology
 
@@ -80,12 +78,6 @@ net_gain(threshold)     = Σ expected_gain − (contact_cost × customers_contac
 4. **Risk & drivers:** risk deciles, SHAP top drivers
 5. **Campaign simulator:** parameter inputs (cost, save rate, margin) → net gain curve
 
-### Memo template (one page)
-- **Recommendation** (first line): "Target the top X% risk customers with offer Y; expected net gain £Z (range A-B)."
-- **Why:** 2-3 evidence bullets (segments, drivers, CLV concentration)
-- **How we got there:** model performance in one sentence, key assumptions
-- **Risks / caveats:** assumptions, data limits
-- **Next step:** run a holdout test on 10% of targeted customers
 
 ## 6. Repository structure
 
@@ -128,7 +120,3 @@ churn-clv-decision/
 | Top 3 churn drivers (SHAP) | _..._ |
 | Optimal targeting threshold | _top x%_ |
 | Estimated net gain (base case, range) | _£X (A-B)_ |
-
-## 13. License
-
-MIT
